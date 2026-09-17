@@ -39,3 +39,7 @@ Create application:
 Run application:
 
 npx ng serve angie13-app
+
+Add material:
+
+`npx ng add @angular/material`
