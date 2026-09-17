@@ -105,6 +105,37 @@
           }
         }
       }
+    },
+    "angie13-shared-lib": {
+      "projectType": "library",
+      "root": "projects/angie13-shared-lib",
+      "sourceRoot": "projects/angie13-shared-lib/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/angie13-shared-lib/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/angie13-shared-lib/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/angie13-shared-lib/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/angie13-shared-lib/src/test.ts",
+            "tsConfig": "projects/angie13-shared-lib/tsconfig.spec.json",
+            "karmaConfig": "projects/angie13-shared-lib/karma.conf.js"
+          }
+        }
+      }
     }
   },
   "defaultProject": "angie13-app"

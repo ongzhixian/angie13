@@ -43,3 +43,7 @@ npx ng serve angie13-app
 Add material:
 
 `npx ng add @angular/material`
+
+Add shared library:
+
+`npx ng generate library angie13-shared-lib`
