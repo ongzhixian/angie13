@@ -1,0 +1,109 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": false
+  },
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "angie13-app": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "projects/angie13-app",
+      "sourceRoot": "projects/angie13-app/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/angie13-app",
+            "index": "projects/angie13-app/src/index.html",
+            "main": "projects/angie13-app/src/main.ts",
+            "polyfills": "projects/angie13-app/src/polyfills.ts",
+            "tsConfig": "projects/angie13-app/tsconfig.app.json",
+            "assets": [
+              "projects/angie13-app/src/favicon.ico",
+              "projects/angie13-app/src/assets"
+            ],
+            "styles": [
+              "projects/angie13-app/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "projects/angie13-app/src/environments/environment.ts",
+                  "with": "projects/angie13-app/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "angie13-app:build:production"
+            },
+            "development": {
+              "browserTarget": "angie13-app:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "angie13-app:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/angie13-app/src/test.ts",
+            "polyfills": "projects/angie13-app/src/polyfills.ts",
+            "tsConfig": "projects/angie13-app/tsconfig.spec.json",
+            "karmaConfig": "projects/angie13-app/karma.conf.js",
+            "assets": [
+              "projects/angie13-app/src/favicon.ico",
+              "projects/angie13-app/src/assets"
+            ],
+            "styles": [
+              "projects/angie13-app/src/styles.css"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "angie13-app"
+}
