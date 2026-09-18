@@ -6,6 +6,10 @@
       "angie13-shared-lib": [
         "dist/angie13-shared-lib/angie13-shared-lib",
         "dist/angie13-shared-lib"
+      ],
+      "pineapple-finance-lib": [
+        "dist/pineapple-finance-lib/pineapple-finance-lib",
+        "dist/pineapple-finance-lib"
       ]
     },
     "baseUrl": "./",
