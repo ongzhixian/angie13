@@ -47,3 +47,11 @@ Add material:
 Add shared library:
 
 `npx ng generate library angie13-shared-lib`
+
+Add components (for default project: angie13):
+
+`npx ng generate component pages/dashboard --selector angie13-dashboard`
+
+Add components (for specific project):
+
+`npx ng generate component pages/dashboard --project pineapple-finance-lib`
