@@ -1,0 +1,38 @@
+:host {
+  display: grid;
+  grid-template-rows: auto 1fr 50px;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+/* Hide the outlet marker so it doesn't take up a grid row */
+router-outlet {
+  display: none;
+}
+
+/* Ensure the routed component fills the middle 1fr track and scrolls if needed */
+router-outlet + * {
+  display: block;
+  overflow-y: auto;
+}
+
+
+header {
+  display: flex;
+  justify-content: start;
+  border: 1px solid greenyellow;
+  padding: 1rem;
+}
+
+header h1 {
+  margin: 0;
+  
+}
+
+footer {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  border: 1px solid greenyellow;
+  padding: 1rem;
+}
