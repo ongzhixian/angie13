@@ -1,4 +1,16 @@
+:root {
+  --primary-color: #3f51b5;
+  --secondary-color: #f50057;
+  --background-color: #f5f5f5;
+  --text-color: #333;
+  --font-family: 'Roboto', sans-serif;
+
+  --brand-font-family: "Black Han Sans", sans-serif;
+  --brand-font-weight: 400;
+  --brand-font-style: normal;
+}
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+

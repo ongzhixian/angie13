@@ -26,9 +26,9 @@ header {
 
 header h1 {
   margin: 0;
- font-family: "Black Han Sans", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+  font-family: var(--brand-font-family);
+  font-weight: var(--brand-font-weight);
+  font-style: var(--brand-font-style);
   font-size: 2rem;
 }
 

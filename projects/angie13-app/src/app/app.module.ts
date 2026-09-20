@@ -9,6 +9,8 @@ import { Page1Component } from './pages/page1/page1.component';
 import { AuthenticatedUserLayoutComponent } from './layouts/authenticated-user-layout/authenticated-user-layout.component';
 import { UnauthenticatedUserLayoutComponent } from './layouts/unauthenticated-user-layout/unauthenticated-user-layout.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
+import { LoginFormComponent } from './forms/login-form/login-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,12 +19,14 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
     Page1Component,
     AuthenticatedUserLayoutComponent,
     UnauthenticatedUserLayoutComponent,
-    HomePageComponent
+    HomePageComponent,
+    LoginFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

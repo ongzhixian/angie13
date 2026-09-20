@@ -1,0 +1,30 @@
+:host {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center;    /* Centers vertically */
+    
+}
+
+
+.content-box {
+  display: flex;
+  grid-template-columns: repeat(2, 1fr); /* Alternative: CSS grid */
+  display: flex;
+  gap: 20px;              /* Space between columns */
+  width: 720px;           /* Set max/fixed width of your box */
+  padding: 20px;
+  background: #f9f9f9;
+  border: 1px solid #ccc;
+  height: 400px;          /* Set height of your box */
+}
+
+.column {
+  flex: 1;                /* Makes both columns equal width */
+}
+
+
+h1 {
+    font-family: var(--brand-font-family);
+    font-weight: var(--brand-font-weight);
+    font-style: var(--brand-font-style);
+}
