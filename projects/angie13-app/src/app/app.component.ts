@@ -54,7 +54,7 @@ export class AppComponent implements OnInit {
    * Updates the browser title with a fallback default
    */
   private updateTitle(title: string | undefined): void {
-    const baseTitle = this.title;
+    const baseTitle = title ?? this.title;
     this.titleService.setTitle(baseTitle);
     // if (title) {
     //   this.titleService.setTitle(`${title} - ${baseTitle}`);

@@ -26,7 +26,10 @@ header {
 
 header h1 {
   margin: 0;
-  
+ font-family: "Black Han Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2rem;
 }
 
 footer {
