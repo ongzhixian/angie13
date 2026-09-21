@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AuthenticationService } from '../../services/authentication.service';
 
 @Component({
   selector: 'angie13-login-form',
@@ -12,11 +13,11 @@ export class LoginFormComponent implements OnInit {
   isLoading = false;
   errorMessage = '';
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private authenticationService: AuthenticationService) {}
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
+      username: ['', [Validators.required, Validators.minLength(3)]],
       password: ['', [Validators.required, Validators.minLength(6)]]
     });
   }
@@ -39,11 +40,13 @@ export class LoginFormComponent implements OnInit {
 
     setTimeout(() => {
       this.isLoading = false;
+
+      
       // Handle response logic here (e.g., redirect to dashboard or set error)
-      if (loginData.email === 'admin@example.com' && loginData.password === 'password123') {
+      if (loginData.username === 'admin' && loginData.password === 'Pass1234') {
         alert('Login successful!');
       } else {
-        this.errorMessage = 'Invalid email or password.';
+        this.errorMessage = 'Invalid username or password.';
       }
     }, 1500);
   }

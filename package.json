@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve angie13-app --port 9200",
     "start:dummy": "ng serve dummy-app --port 4202",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",

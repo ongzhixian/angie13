@@ -1,37 +1,40 @@
 <div class="login-container">
-  <h2>Account Login</h2>
 
   <div *ngIf="errorMessage" class="alert error-alert">
     {{ errorMessage }}
   </div>
 
   <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-    <!-- Email Field -->
+    <!-- Username Field -->
     <div class="form-group">
-      <label prejudices for="email">Email Address</label>
-      <input 
-        id="email" 
-        type="email" 
-        formControlName="email" 
-        [class.is-invalid]="f['email'].touched && f['email'].invalid"
-        placeholder="Enter your email" />
-      
-      <div *ngIf="f['email'].touched && f['email'].errors" class="invalid-feedback">
-        <small *ngIf="f['email'].errors['required']">Email is required.</small>
-        <small *ngIf="f['email'].errors['email']">Please enter a valid email address.</small>
+
+      <div>
+        <label prejudices for="username">Username</label>
+      </div>
+
+      <div>
+        <input id="username" type="text" formControlName="username"
+          [class.is-invalid]="f['username'].touched && f['username'].invalid" placeholder="Enter your user name" />
+      </div>
+
+      <div *ngIf="f['username'].touched && f['username'].errors" class="invalid-feedback">
+        <small *ngIf="f['username'].errors['required']">Username is required.</small>
+        <small *ngIf="f['username'].errors['username']">Please enter a valid username.</small>
       </div>
     </div>
 
     <!-- Password Field -->
     <div class="form-group">
-      <label for="password">Password</label>
-      <input 
-        id="password" 
-        type="password" 
-        formControlName="password" 
-        [class.is-invalid]="f['password'].touched && f['password'].invalid"
-        placeholder="Enter your password" />
-      
+
+      <div>
+        <label for="password">Password</label>
+      </div>
+
+      <div>
+        <input id="password" type="password" formControlName="password"
+          [class.is-invalid]="f['password'].touched && f['password'].invalid" placeholder="Enter your password" />
+      </div>
+
       <div *ngIf="f['password'].touched && f['password'].errors" class="invalid-feedback">
         <small *ngIf="f['password'].errors['required']">Password is required.</small>
         <small *ngIf="f['password'].errors['minlength']">Password must be at least 6 characters long.</small>
@@ -39,8 +42,10 @@
     </div>
 
     <!-- Submit Button -->
-    <button type="submit" [disabled]="isLoading">
-      {{ isLoading ? 'Logging in...' : 'Sign In' }}
-    </button>
+    <div>
+      <button type="submit" [disabled]="isLoading">
+        {{ isLoading ? 'Logging in...' : 'Sign In' }}
+      </button>
+    </div>
   </form>
 </div>
