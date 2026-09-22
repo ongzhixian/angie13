@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthenticationService } from '../../services/authentication.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'angie13-login-form',
@@ -13,7 +14,9 @@ export class LoginFormComponent implements OnInit {
   isLoading = false;
   errorMessage = '';
 
-  constructor(private fb: FormBuilder, private authenticationService: AuthenticationService) {}
+  constructor(private fb: FormBuilder
+    , private router: Router
+    , private authenticationService: AuthenticationService) {}
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
@@ -38,17 +41,32 @@ export class LoginFormComponent implements OnInit {
     const loginData = this.loginForm.value;
     console.log('Submitting login payload:', loginData);
 
-    setTimeout(() => {
-      this.isLoading = false;
+    var model = { 
+      username: loginData.username
+      , password: loginData.password
+    };
+    // errorMessage = '';
+
+    this.authenticationService.login(model).subscribe({
+      next: () => {
+        this.router.navigate(['/dashboard']); // Navigate to restricted area on success
+      },
+      error: (err) => {
+        this.errorMessage = 'Invalid email or password';
+      }
+    });
+
+    // setTimeout(() => {
+    //   this.isLoading = false;
 
       
-      // Handle response logic here (e.g., redirect to dashboard or set error)
-      if (loginData.username === 'admin' && loginData.password === 'Pass1234') {
-        alert('Login successful!');
-      } else {
-        this.errorMessage = 'Invalid username or password.';
-      }
-    }, 1500);
+    //   // Handle response logic here (e.g., redirect to dashboard or set error)
+    //   if (loginData.username === 'admin' && loginData.password === 'Pass1234') {
+    //     alert('Login successful!');
+    //   } else {
+    //     this.errorMessage = 'Invalid username or password.';
+    //   }
+    // }, 1500);
   }
 
 }

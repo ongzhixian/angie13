@@ -11,6 +11,7 @@ import { UnauthenticatedUserLayoutComponent } from './layouts/unauthenticated-us
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { LoginFormComponent } from './forms/login-form/login-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

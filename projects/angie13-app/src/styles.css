@@ -8,9 +8,28 @@
   --brand-font-family: "Black Han Sans", sans-serif;
   --brand-font-weight: 400;
   --brand-font-style: normal;
+
+  --dotting-color1: #87b5a1;
+  --dotting-color2: #b7d5c8;
+  --dotting-color3: #c1a788;
+  --dotting-color4: #dcccbb;
+
+
+  --dust-color1: #dcccbb;
+  --dust-color2: #504538;
+  --dust-color3: #c1a788;
+  --dust-color4: #b7d5c8;
+
 }
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; font-size: 1rem;}
 
+
+button {
+  font-size: 1.2rem;
+  padding: .3rem .6rem;
+  background-color: var(--dust-color4);
+  border-color: var(--dust-color4);
+}
